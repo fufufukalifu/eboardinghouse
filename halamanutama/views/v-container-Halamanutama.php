@@ -1,9 +1,17 @@
  
            
 
-<link rel="stylesheet" href="<?=base_url('assets/plugins/owl/css/owl.carousel.min.css')?>">
-<link rel="stylesheet" href="<?=base_url('assets/plugins/layerslider/css/layerslider.min.css')?>">
-<script type="text/javascript" src="<?=base_url('assets/plugins/magnific/js/jquery.magnific-popup.min.js') ?>"></script><script type="text/javascript" src="<?=base_url('assets/plugins/shuffle/js/jquery.shuffle.min.js') ?>"></script>
+   
+        <link rel="stylesheet" href="<?=base_url('assets/plugins/owl/css/owl.carousel.min.css')?>">
+        
+        <link rel="stylesheet" href="<?=base_url('assets/plugins/layerslider/css/layerslider.min.css')?>">
+        
+        <!--/ Plugins stylesheet -->
+
+        <!-- Application stylesheet : mandatory -->
+        <link rel="stylesheet" href="<?=base_url('assets/library/bootstrap/css/bootstrap.min.css')?>">
+        <link rel="stylesheet" href="<?=base_url('assets/stylesheet/layout.css')?>">
+        <link rel="stylesheet" href="<?=base_url('assets/stylesheet/uielement.css')?>">
 
 <section id="layerslider" style="width:100%;height:480px;">
  <div class="ls-slide" data-ls="transition2d:1; slidedelay:8000;">
@@ -17,55 +25,35 @@
 
   <!-- Layer #2 -->
   <h1 class="ls-l font-alt" style="top:110px;left:150px;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;">
-   Welcome To <span class="text-primary">Adminre</span> 
+   Selamat Datang <br>Di <span class="text-primary">Bandung eboarding house!</span> 
   </h1>
   <!--/ Layer #2 -->
 
   <!-- Layer #3 -->
-  <h4 class="ls-l font-alt thin text-default" style="top:170px;left:150px;width:550px;" data-ls="offsetxin:0; durationin:2000; delayin:2000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
-   Adminre is a clean and flat backend and frontend theme build with Twitter bootstrap 3.1.1
+  <h4 class="ls-l font-alt thin text-default" style="top:210px;left:150px;width:550px;" data-ls="offsetxin:0; durationin:2000; delayin:2000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+   Bandung Eboarding House adalah situs penyewaan kos-kosan terbesar dan terlengkap di Kota Bandung!
   </h4>
   <!--/ Layer #3 -->
 
-  <!-- Layer #4 -->
-  <p class="ls-l text-default" style="top:230px;left:150px;width:550px;" data-ls="offsetxin:0; durationin:2000; delayin:2500; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
-   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat.
-  </p>
-  <!--/ Layer #4 -->
 
   <!-- Layer #5 -->
-  <a href="javascript:void(0);" class="ls-l btn btn-primary" style="top:310px; left:150px;" data-ls="offsetxin:0; durationin:2000; delayin:3000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
-   Purchase Now <i class="ico-angle-right ml5"></i>
+  <a href="<?=base_url('index.php/register') ?>" class="ls-l btn btn-primary" style="top:310px; left:150px;" data-ls="offsetxin:0; durationin:2000; delayin:3000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+  Daftar Sekarang! <i class="ico-angle-right ml5"></i>
   </a>
   <!--/ Layer #5 -->
 
   <!-- Layer #6 -->
-  <img class="ls-l" style="top:320px;left:280px;" src="<?=base_url('assets/image/layerslider/layer/arrow.png') ?>" data-ls="delayin:3500; offsetxin:0; offsetyin:-30; easingin:easeOutElastic;">
+  <img class="ls-l" style="top:320px;left:340px;" src="<?=base_url('assets/image/layerslider/layer/arrow.png') ?>" data-ls="delayin:3500; offsetxin:0; offsetyin:-30; easingin:easeOutElastic;">
   <!--/ Layer #6 -->
  </div>
  <!-- Slide #1 -->
 
+
+
+
 </section>
 
-<!-- START Call To Action Section -->
-<section class="section bgcolor-primary">
- <div class="container">
-  <div class="col-sm-12">
-   <h3 class="font-alt text-white mt0">            <!-- START navbar form -->
-    <form action="" role="search">
-     <div class="has-icon">
-      <input type="text" class="form-control" placeholder="Cari Kosan...">
-      <i class="ico-search form-control-icon"></i>
-     </div>
-    </form>
-    <!-- START navbar form --></h3>
-   </div>
-  </div>
- </section>
- <!-- END Call To Action Section -->
+
 
  <!-- START Recent Blog Section -->
  <section class="section bgcolor-white">
@@ -141,9 +129,25 @@
  <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
  <!--/ END To Top Scroller -->
 </section>
-      <script type="text/javascript" src="<?=base_url('assets/plugins/owl/js/owl.carousel.min.js') ?>"></script>
+<!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+        <!-- Library script : mandatory -->
+        <script type="text/javascript" src="<?=base_url('assets/library/jquery/js/jquery.min.js')?>"></script>
+        <script type="text/javascript" src="<?=base_url('assets/library/jquery/js/jquery-migrate.min.js')?>"></script>
+        <script type="text/javascript" src="<?=base_url('assets/library/bootstrap/js/bootstrap.min.js')?>"></script>
+        <script type="text/javascript" src="<?=base_url('assets/library/core/js/core.min.js')?>"></script>
+        <!--/ Library script -->
 
-      <script type="text/javascript" src="<?=base_url('assets/javascript/pages/frontend/portfolio.js') ?>"></script>
+        <!-- App and page level script -->
+        <script type="text/javascript" src="<?=base_url('assets/plugins/sparkline/js/jquery.sparkline.min.js')?>"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="<?=base_url('assets/javascript/app.js')?>"></script>
+        
+        
+        <script type="text/javascript" src="<?=base_url('assets/plugins/owl/js/owl.carousel.min.js')?>"></script>
+        
+        <script type="text/javascript" src="<?=base_url('assets/plugins/layerslider/js/greensock.min.js')?>"></script>
+        
+        <script type="text/javascript" src="<?=base_url('assets/plugins/layerslider/js/transitions.min.js')?>"></script>
+        
         <script type="text/javascript" src="<?=base_url('assets/plugins/layerslider/js/layerslider.min.js')?>"></script>
-    
-      <script type="text/javascript" src="<?=base_url('assets/javascript/pages/frontend/home.js') ?>"></script>
+        
+        <script type="text/javascript" src="<?=base_url('assets/javascript/pages/frontend/home.js')?>"></script>
