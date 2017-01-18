@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="<?=base_url('assets/library/bootstrap/css/bootstrap.min.css')?>">
     <link rel="stylesheet" href="<?=base_url('assets/stylesheet/layout.min.css')?>">
     <link rel="stylesheet" href="<?=base_url('assets/stylesheet/uielement.min.css')?>">
+    <link rel="stylesheet" href="<?=base_url('assets/plugins/swal/sweetalert.css')?>">
+    <script type="text/javascript" src="<?=base_url('assets/plugins/swal/sweetalert.min.js')?>"></script> 
+
+
     <!--/ Application stylesheet -->
     <!-- END STYLESHEETS -->
 

@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <label class="col-md-12 control-label">Nama</label>
                             <div class="col-md-6">
-                                    <span class="text-danger errornamadepan"></span>
+                                <span class="text-danger errornamadepan"></span>
 
                                 <div class="has-icon pull-left">
                                     <input type="text" class="form-control" name="namadepan"  placeholder="Nama Depan" data-parsley-required>
@@ -36,7 +36,7 @@
 
                         <div class="form-group">
                             <label class="col-md-12 control-label">Email</label>
-                                    <span class="text-danger erroremail"></span>
+                            <span class="text-danger erroremail"></span>
 
                             <div class="col-md-12">
 
@@ -49,7 +49,7 @@
 
                         <div class="form-group">
                             <label class="col-md-12 control-label">Daftar Sebagai</label>
-                                    <span class="text-danger errordaftar_sebagai"></span>
+                            <span class="text-danger errordaftar_sebagai"></span>
 
                             <div class="col-md-12">
                                 <div class="col-md-6"><input type="radio"
@@ -63,7 +63,7 @@
 
                             <div class="form-group">
                                 <label class="col-md-12 control-label">Username</label>
-                                    <span class="text-danger errorusername"></span>
+                                <span class="text-danger errorusername"></span>
 
                                 <div class="col-md-12">
                                     <div class="has-icon pull-left">
@@ -75,7 +75,7 @@
 
                             <div class="form-group">
                                 <label class="col-md-12 control-label">Akun Bank</label>
-                                    <span class="text-danger errorbank"></span>
+                                <span class="text-danger errorbank"></span>
 
                                 <div class="col-md-6">
                                     <div class="has-icon pull-left">
@@ -94,7 +94,7 @@
 
                          <div class="form-group">
                              <label class="col-md-12 control-label">Alamat</label>
-                                    <span class="text-danger erroralamat"></span>
+                             <span class="text-danger erroralamat"></span>
 
                              <div class="col-md-12">
                                 <textarea class="form-control" name="alamat"></textarea>
@@ -103,7 +103,7 @@
 
                         <div class="form-group">
                             <label class="col-md-12 control-label">Telephone</label>
-                                    <span class="text-danger errorPhone"></span>
+                            <span class="text-danger errorPhone"></span>
 
                             <div class="col-md-12">
                                 <div class="has-icon pull-left">
@@ -115,7 +115,7 @@
 
                         <div class="form-group">
                             <label class="col-md-12 control-label">Tanggal Lahir</label>
-                                    <span class="text-danger errortanggal_lahir"></span>
+                            <span class="text-danger errortanggal_lahir"></span>
 
                             <div class="col-md-12">
                                 <div class="has-icon pull-left">
@@ -127,11 +127,11 @@
                         </div>
                         <div class="form-group">
                             <label class="col-md-12 control-label" name="password">Password</label>
-                                    <span class="text-danger errorpassword"></span>
+                            <span class="text-danger errorpassword"></span>
 
                             <div class="col-md-12">
                                 <div class="has-icon pull-left">
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" name="password">
                                     <i class="ico-lock form-control-icon"></i> 
 
                                 </div>
@@ -140,7 +140,7 @@
 
                         <div class="form-group">
                             <label class="col-md-12 control-label"><span class="text-danger">Confirm*</span></label>
-                                    <span class="text-danger errorpassword_confirm"></span>
+                            <span class="text-danger errorpassword_confirm"></span>
 
                             <div class="col-md-12">
                                 <div class="has-icon pull-left">
@@ -172,14 +172,30 @@
                     type:"POST",
                     url:"<?php echo base_url() ?>"+url,
                     data:data,
-                    dataType:"json",                    success:function (data) {
-                     $.each(data, function(key, value){
-                        $('.error'+key).html(value);
-                    })
-                 },error:function(){
-                    alert('ini gagal');
-                }
-            });
+                    dataType:"json",
+                    success:function (data) {
+                        if (data.status==1) {
+                            swal({
+                                text: "Anda Berhasil mendaftar, Silahkan melakukan login!",
+                                title:"Berhasil Mendaftar",
+                                showCancelButton: false,
+                                confirmButtonColor: "#DD6B55",
+                                confirmButtonText: "Login!",
+                                closeOnConfirm: false
+                            },
+                            function(){
+                                window.location = "<?=base_url('index.php/login') ?>";
+                            });
+                        }else{
+                            $.each(data, function(key, value){
+                                $('.error'+key).html(value);
+                                console.log(key+" "+value);
+                            });       
+                        }
+                    },error:function(){
+                        alert('ini gagal');
+                    }
+                });
 
             }
         </script>

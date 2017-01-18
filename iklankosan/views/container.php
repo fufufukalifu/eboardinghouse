@@ -216,7 +216,7 @@
 
 
 		function load_data(){
-			url = "http://localhost/ekosan/index.php/iklankosan/data";
+			url = base_url+"/index.php/iklankosan/data";
 			get_data(url);
 			$('input[name=tipekosan]').attr('checked', false);
 			$('.form-horizontal').reset();
@@ -282,7 +282,7 @@
 		'</div>'+
 		'</div>'+
 
-		'<img  src="http://localhost/ekosan/assets/imagekosan/kosan'+data.id+'.jpg" data-src="http://localhost/ekosan/assets/imagekosan/kosan'+data.id+'.jpg" alt="Photo" width="100%" />'+
+		'<img  src="'+base_url+'/assets/imagekosan/kosan'+data.id+'.jpg" data-src="http://localhost/ekosan/assets/imagekosan/kosan'+data.id+'.jpg" alt="Photo" width="100%" />'+
 		'</div>'+
 
 		'</div>'+
@@ -351,7 +351,7 @@
 
 
        	$('.kosancontainer').html("");
-       	url = "http://localhost/ekosan/index.php/iklankosan/data_coba";
+       	url = base_url+"/index.php/iklankosan/data_coba";
        	get_data_search(parameter,url);
        	drop_marker();
        })

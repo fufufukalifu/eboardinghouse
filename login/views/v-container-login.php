@@ -23,11 +23,19 @@
                 <hr><!-- horizontal line -->
 
                 <!-- Login form -->
-                <form class="panel" name="form-login" action="">
+                <form class="panel form-login" name="form-login">
                     <div class="panel-body">
                         <!-- Alert message -->
-                        <div class="alert alert-warning">
-                            <span class="semibold">Note :</span>&nbsp;&nbsp;isi nama pengguna dan kata sandi anda lalu login!
+                        <div class="pesan-awal alert alert-warning">
+                            <span class=" semibold">Note :</span>&nbsp;&nbsp;isi nama pengguna dan kata sandi anda lalu login!
+                        </div>
+
+                        <div class="gagal-login-kosong alert alert-danger" style="display: none">
+                            <span class="semibold">Gagal login, username, email atau password anda salah!</span>
+                        </div>
+
+                        <div class="gagal-login alert alert-danger" style="display: none">
+                            <span class="semibold">Gagal login, username, email atau password anda salah!</span>
                         </div>
 
                         <div class="form-group">
@@ -54,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-6 text-right">
-                                    <button type="submit" class="btn btn-block btn-primary"><span class="semibold">Masuk</span></button>
+                                    <a onclick="login()" class="btn btn-block btn-primary"><span class="semibold">Masuk</span></a>
                                     
                                 </div>
                             </div>
@@ -68,4 +76,35 @@
         </div>
     </div>
 </section>
-            <!--/ END Register Content
+
+<script type="text/javascript">
+    function login(){
+        data_form = $('.form-login').serialize();
+
+        if(data_form.indexOf('=&') > -1 || data_form.substr(data_form.length - 1) == '='){
+            $('.gagal-login-kosong').html("Silahkan lengkapi data login anda!");
+            $('.gagal-login-kosong').toggle('slow');
+        }else{
+           url = "index.php/login/trylogin";
+           $.ajax({
+            type:"POST",
+            url:"<?php echo base_url() ?>"+url,
+            data:data_form,
+            dataType:"json",
+            success:function (data) {
+                console.log(data.status);
+                if (data.status==1) {
+                            window.location = "<?=base_url('index.php/iklankosan') ?>";
+                        }else{
+                            $('.gagal-login').toggle('slow');
+                            $('.gagal-login-kosong').toggle('slow');
+                        }
+                    },error:function(){
+                        alert('ini gagal');
+                    }
+                });
+       }
+
+
+   }
+</script>
