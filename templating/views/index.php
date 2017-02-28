@@ -60,7 +60,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Search form toggler -->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="dropdown" data-target="#dropdown-form">
+                        <a href="<?=base_url('index.php/iklankosan') ?>" >
                             <span class="meta">
                                 <span class="icon"><i class="ico-search"></i></span>
                             </span>
@@ -74,7 +74,7 @@
                 <div class="collapse navbar-collapse navbar-collapse-alt" id="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="<?=base_url('index.php/iklankosan/register') ?>">
                                 <span class="meta">
                                     <span class="text">Daftar</span>
                                 </span>
